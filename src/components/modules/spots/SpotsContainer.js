@@ -37,7 +37,7 @@ export default function SpotsContainer() {
                                     <MenuIcon />
                                 </IconButton>
                                 <Typography variant="h6" color="inherit" component="div">
-                                    {t("spots.results_title_1").replace('{{n}}', (data && data.length)).replace('{{place}}', (filters.city && filters.city.name))}
+                                    {t("spots.results_title_1").replace('{{n}}', (data && data.length || '')).replace('{{place}}', (filters.city && filters.city.name))}
                                 </Typography>
                             </Toolbar>
                         </AppBar>
