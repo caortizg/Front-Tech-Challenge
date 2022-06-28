@@ -6,7 +6,7 @@ const Slider = ({ error, formik, fullWidth, helperText, label, value, ...props }
     const { name } = props;
     return (
         <Box fullWidth>
-            <Typography id="input-slider"  sx={{marginBottom:2}}>{label}</Typography>
+            <Typography id="input-slider"  sx={{marginBottom:3}}>{label}</Typography>
             <Grid container spacing={2} alignItems="center" sx={{paddingX:1}}>
                 <Grid item xs>
                     <SliderMui
