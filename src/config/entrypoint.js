@@ -1,0 +1,3 @@
+export const ENTRYPOINT = process.env.REACT_APP_ENTRYPOINT;
+export const API_AUTHORIZATION = process.env.REACT_APP_API_AUTHORIZATION;
+export const MAP_ACCESS_TOKEN = process.env.REACT_APP_MAP_ACCESS_TOKEN;
