@@ -7,6 +7,7 @@ import { Card, CardContent, Chip, Divider, Grid, IconButton, Typography } from '
 import { useTranslation } from 'react-i18next';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { mapsNavigate } from '../../map/utils';
+import SkeletonSpotCard from './Skeleton/SkeletonSpotCard';
 
 const SpotCard = ({ spotId }) => {
 
@@ -51,7 +52,7 @@ const SpotCard = ({ spotId }) => {
                 </Grid>
             </CardContent>
         </Card>
-    ));
+    ) || (<SkeletonSpotCard />));
 }
 
 export default SpotCard; 
