@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Typography } from '@mui/material';
+import ButtonColorMode from '../config/ButtonColorMode';
 
 const drawerWidth = 240;
 
@@ -57,7 +58,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function TpDrawerWithToolbarLeftTransparent({ToolbarTitle, ToolbarContent, DrawerContent, children}) {
+export default function TpDrawerWithToolbarLeftTransparent({ ToolbarTitle, ToolbarContent, DrawerContent, children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -100,6 +101,10 @@ export default function TpDrawerWithToolbarLeftTransparent({ToolbarTitle, Toolba
                 </DrawerHeader>
                 <Divider />
                 {DrawerContent}
+                <Box position="fixed" sx={{ bottom: 0, width: "100%" }}>
+                    <Divider />
+                    <ButtonColorMode />
+                </Box>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

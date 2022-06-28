@@ -2,11 +2,11 @@ import React from 'react';
 import { createTheme, ThemeProvider as ThemeProviderMui } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+export const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
-
-export const rootTheme = createTheme({
+const confTheme = {
     palette: {
-        mode: 'light',
+        mode: 'dark',
         background: {
             default: "#FFFFFF"
         },
@@ -26,14 +26,34 @@ export const rootTheme = createTheme({
     typography: {
         useNextVariants: true,
     },
-});
+};
+export const rootTheme = createTheme(confTheme);
 
 const ThemeProvider = props => {
+    const [mode, setMode] = React.useState(localStorage.getItem('palette_mode') || 'light');
+    const colorMode = React.useMemo(() => ({
+        toggleColorMode: () => {
+            setMode((prevMode) => {
+                const newMode = (prevMode === 'light' ? 'dark' : 'light');
+                localStorage.setItem('palette_mode', newMode);
+                return newMode;
+            });
+        },
+    }), []);
+    const theme = React.useMemo(() => createTheme({
+        ...confTheme,
+        palette: {
+            ...confTheme.palette,
+            mode
+        },
+    }), [mode]);
     return (
-        <ThemeProviderMui theme={rootTheme}>
-            <CssBaseline />
-            {props.children}
-        </ThemeProviderMui>
+        <ColorModeContext.Provider value={colorMode}>
+            <ThemeProviderMui theme={theme}>
+                <CssBaseline />
+                {props.children}
+            </ThemeProviderMui>
+        </ColorModeContext.Provider>
     );
 }
 export default ThemeProvider;

@@ -28,7 +28,7 @@ export default function SpotsContainer() {
             ToolbarContent={({ handleDrawerOpen, open, ...props }) => {
                 return (
                     <Box >
-                        <AppBar position="static" sx={{ width: "auto" }}>
+                        <AppBar position="static" sx={{ width: "auto" }} enableColorOnDark>
                             <Toolbar variant="dense">
                                 <IconButton edge="start" color="inherit" aria-label="menu"
                                     onClick={handleDrawerOpen}
