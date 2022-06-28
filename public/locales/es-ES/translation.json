@@ -1,0 +1,26 @@
+{
+    "spots": {
+        "results_title_1" : "{{n}} Desarrollos inmobiliarios en {{place}}",
+        "spot_filters" : "Busqueda de spots",
+        "square_space" : "Área(m²)",
+        "submit_filters": "Filtrar",
+        "term" : "Término",
+        "type" : "Tipo",
+        "phone": "Telefono",
+        "street": "Calle"
+    },
+    "enum": {
+        "spot_type_id": {
+            "1": "Lugar de la calle",
+            "2": "En el centro comercial Spot",
+            "3": "En la isla del centro comercial",
+            "4": "Otro",
+            "5": "*Sin confirmar*"
+        },
+        "term": {
+            "1": "Corto plazo",
+            "2": "Largo plazo",
+            "3": "Ambos"
+        }
+    }
+}
